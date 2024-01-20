@@ -67,7 +67,7 @@
             />
             <p style="margin-top: 10px" id="userLocation"></p>
           </div>
-          <p id="userTwitterLink"></p>
+          <a id="userTwitterLink"></a>
         </div>
         <div class="box3">
           <!--  -->
@@ -82,14 +82,13 @@
           </div>
 
           <!--  -->
-         <div style="margin:20px">
-          <label for="repo">Select Repositories per page:</label>
+         <div style="margin-left:22px; margin-top:50px; width:auto">
+          <label for="repo">Slide to Choose Repositories per page to display:</label>
           <input
             style="font-size: 10px; display: flex;justify-content: right"
             type="range"
             id="slider"
             min="1"
-            max="100"
             value="10"
             step="1"
           />
@@ -105,7 +104,7 @@
           alt="Location Icon"
           id="Location"
         />
-        <p style="margin-top: 10px" id="htmlUrl"></p>
+        <a style="margin-top: 1px" id="htmlUrl"></a>
       </div>
 
       <div id="dynamicContent"></div>

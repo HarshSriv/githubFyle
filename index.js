@@ -1,9 +1,22 @@
+
+const mainBody = document.querySelector('#mainBody');
+const mainContainer = document.querySelector("#dynamicContent");
+
+
+
 const fetchUserData = async () => {
-    let mainBody = document.querySelector('#mainBody');
-    mainBody.style.display='block';
-    const inputElement = document.querySelector("#GithubUserName");
-    const userId = inputElement.value.trim();
-    
+    const element = document.getElementById("dynamicContent");
+    while (element.firstChild) {
+    element.removeChild(element.firstChild);
+    }
+mainBody.style.display='block';
+let inputElement = document.querySelector("#GithubUserName");
+let userId = inputElement.value.trim();
+    let pageFooter = document.querySelector("#footer");
+    pageFooter.innerHTML = "";
+    loader.style.display = "flex";
+    mainContainer.innerHTML = "";
+
   
     if (userId) {
       console.log(userId);
@@ -25,6 +38,8 @@ const fetchUserData = async () => {
     const slider = document.getElementById("slider");
   
     const sliderValue = document.getElementById("sliderValue");
+  
+
     let fetchedRepoData=[];
   
     fetch(apiUrl)
@@ -36,7 +51,11 @@ const fetchUserData = async () => {
       })
       .then((data) => {
         console.log(data);
-  
+        if (data.public_repos > 100) {
+            slider.max = 100;
+        } else {
+            slider.max = data.public_repos;
+        }
         document.getElementById("profilePic").src = data.avatar_url;
         document.getElementById("userName").textContent = data.name || "N/A";
         document.getElementById("userBio").textContent = data.bio || "N/A";
@@ -45,9 +64,17 @@ const fetchUserData = async () => {
         document.getElementById("htmlUrl").textContent = `${
           data.html_url || "N/A"
         }`;
+        document.getElementById("htmlUrl").href = `${
+          data.html_url || "N/A"
+        }`;
         document.getElementById(
           "userTwitterLink"
         ).textContent = `Twitter: https://twitter.com/${
+          data.twitter_username || ""
+        }`;
+        document.getElementById(
+          "userTwitterLink"
+        ).href = `https://twitter.com/${
           data.twitter_username || ""
         }`;
         public_repos = data.public_repos;
@@ -65,9 +92,11 @@ const fetchUserData = async () => {
       sliderValue.textContent = this.value;
       reposPerPage = this.value;
       let mainContainer = document.getElementById("dynamicContent");
+     
       mainContainer.innerHTML = "";
       let pageFooter = document.querySelector(".pagination-container");
       pageFooter.innerHTML = "";
+     
       createPaginationButtons(
         currentPage,
         Math.ceil(public_repos / reposPerPage)
@@ -126,7 +155,15 @@ function filterRepoData(data, filterCriteria) {
   
           const rightSide = document.createElement("div");
           rightSide.classList.add("right-side");
-  
+          
+          if (mainContainer) {
+            while (mainContainer.firstChild) {
+                mainContainer.removeChild(mainContainer.firstChild);
+            }
+          }
+        //   mainBody.innerHTML='';
+
+
           data.forEach((item, index) => {
             const div = document.createElement("div");
             div.id = `item-${index}`;
@@ -194,6 +231,9 @@ function filterRepoData(data, filterCriteria) {
         });
     };
   
+        
+
+
     function createPaginationButtons(currentPage, totalPages) {
       //loads repos first time
       fetchRepos(currentPage);
@@ -256,7 +296,8 @@ function filterRepoData(data, filterCriteria) {
    
     alert("Invalid input. Please enter a GitHub username.")
   }
-  };
+   };
+
 
   const showFilteredData=(dataFiltered,reposPerPage)=>{
     let mainContainer = document.getElementById("dynamicContent");
@@ -332,7 +373,6 @@ function filterRepoData(data, filterCriteria) {
   
           mainContainer.appendChild(container);
   }
-
 
 
 
