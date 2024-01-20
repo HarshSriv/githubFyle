@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fyle Internship</title>
+    <link rel="stylesheet" href="assets/index.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css"/>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="input-group mb-3" style="display:flex; margin:10px">
+          <span class="input-group-text" style="margin-right:10px;margin-top:8px;" id="basic-addon1"><a class="navbar-brand" href="#">
+            <p>Github </p>
+          </span>
+          <input type="text" id="GithubUserName" style="width: 220px" class="form-control" placeholder="Enter Username ex- JohnPapa" aria-label="Username" aria-describedby="basic-addon1" value="johnpapa">
+          <button onclick="fetchUserData()" id="search-btn" type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+                  
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="loader"
+      style="
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <img src="spinner.gif" />
+    </div>
+
+    <div id="mainBody" style="display:none;">
+      <div class="container" style="margin-left: 20px">
+        <div class="box1">
+          <img id="profilePic" alt="User Avatar" />
+        </div>
+        <div class="box2">
+          <h1 id="userName"></h1>
+
+          <p id="userBio"></p>
+          <div style="display: flex; align-items: center">
+            <img
+              style="margin-right: 7px"
+              src="./assets/location.svg"
+              alt="Location Icon"
+              id="Location"
+            />
+            <p style="margin-top: 10px" id="userLocation"></p>
+          </div>
+          <p id="userTwitterLink"></p>
+        </div>
+        <div class="box3">
+          <!--  -->
+          <div class="input-group" style="display:flex;margin-left:20px;">
+            <div class="form-outline" data-mdb-input-init>
+              <input id="search-input" type="search" id="form1" class="form-control" placeholder="Search repos..." />
+              
+            </div>
+            <button id="search-button" type="button" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <!--  -->
+         <div style="margin:20px">
+          <label for="repo">Select Repositories per page:</label>
+          <input
+            style="font-size: 10px; display: flex;justify-content: right"
+            type="range"
+            id="slider"
+            min="1"
+            max="100"
+            value="10"
+            step="1"
+          />
+          <span id="sliderValue">10</span>
+
+         </div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center">
+        <img
+          style="margin-left: 21px; margin-right: 10px; height: 20px"
+          src="./assets/link.png"
+          alt="Location Icon"
+          id="Location"
+        />
+        <p style="margin-top: 10px" id="htmlUrl"></p>
+      </div>
+
+      <div id="dynamicContent"></div>
+      <div style="display:flex;flex-wrap:wrap" id="footer"></div>
+    </div>
+     <script src="index.js"></script>
+</body>
+</html>

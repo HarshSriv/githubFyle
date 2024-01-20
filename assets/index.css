@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+.navbar-header a p{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+/* Starting  main */
+.header{
+    font-size: 35px;
+    font-family: 'Yellowtail', cursive;
+    text-align: center;
+}
+.header i{
+    color: rgb(0, 166, 255);
+}
+.liveradio{
+    float: left;
+    width: 25%;
+    
+}
+.radio{
+    text-align: center;
+}
+.des{
+    padding: 15px;
+    text-align: center;
+}
+/* Done */
+.cop{
+ text-align: center;
+}
+/*mediascreen*/
+/* New Codes will added in few weeks*/
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+    align-items: center;
+}
+
+.container img{
+  height: 200px;
+  border-radius: 50%;
+}
+
+.container .box1{
+    margin: 18px;
+    flex: 1;
+}
+.container .box2{
+    margin: 18px;
+    flex: 5;
+}
+
+.container .box3{
+    margin: 18px;
+    flex: 2;
+}
+
+.container p{
+    font-size: larger;
+}
+
+.container #Location{
+    height: 20px;
+    width: 20px;
+}
+
+.repoContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left-side,
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  .pagination-container{
+    display: flex;
+    color: rgb(40, 117, 223);
+    background-color: white;
+    justify-content: center;
+    margin: 12px;
+  }
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+
