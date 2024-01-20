@@ -15,8 +15,8 @@ Welcome to the GithubFyle -GitHub Repositories Viewer! This web application allo
 1. **Clone the repository:**
 
     ```bash
-   git clone https://github.com/your-username/github-repositories-viewer.git
-   cd github-repositories-viewer
+   git clone  https://github.com/HarshSriv/githubFyle/.git
+   cd githubFyle
     ```
 
 2. **Open `index.html` in your web browser.**
@@ -48,7 +48,3 @@ Welcome to the GithubFyle -GitHub Repositories Viewer! This web application allo
 3. **Click Search:**
    - Click the "Search" button to fetch and display the user data and repositories.
 
-
-   
-   git clone  https://github.com/HarshSriv/githubFyle/.git
-   cd githubFyle
