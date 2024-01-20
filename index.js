@@ -11,21 +11,10 @@ const fetchUserData = async () => {
       const apiUrl = `https://api.github.com/users/${userId}`;
       const apiUrlRepos = `https://api.github.com/users/${userId}/repos`;
   
-      
-    
-      // Now you can use apiUrl and apiUrlRepos for fetching data from GitHub API
    
-      const searchButton = document.getElementById('search-button');
+    const searchButton = document.getElementById('search-button');
     const searchInput = document.getElementById('search-input');
   
-  
-  /*  const UserId = document.querySelector("#GithubUserName").value ;
-    console.log(UserId);
-    const apiUrl = `https://api.github.com/users/johnpapa`;
-    const apiUrlRepos =`https://api.github.com/users/johnpapa/repos`;
-  */   
-   //const apiUrl = "";
-    //const apiUrlRepos ="";
     let currentPage = 1;
     let reposPerPage = 10;
     let public_repos = 0;
@@ -244,10 +233,10 @@ function filterRepoData(data, filterCriteria) {
       });
       container.appendChild(nextButton);
   
-      // Append the container to the document body (you can append it to any other container)
+      // Append the container to the document body
       document.body.appendChild(container);
   
-      // Function to update the page (you can replace this with your logic)
+      // Function to update the page
       function updatePage(newPage) {
         let btn = document.querySelector(`#btn-${newPage}`);
         for (let i = 1; i <= totalPages; i++) {
@@ -263,7 +252,6 @@ function filterRepoData(data, filterCriteria) {
       }
     }
   
-    ////////////////
   } else {
    
     alert("Invalid input. Please enter a GitHub username.")
