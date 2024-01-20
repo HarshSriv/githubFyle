@@ -35,7 +35,7 @@ Welcome to the GithubFyle -GitHub Repositories Viewer! This web application allo
 - HTML
 - CSS
 - JavaScript
-- Bootstrap (optional, based on your usage)
+- Bootstrap 
 
 ## Usage
 
