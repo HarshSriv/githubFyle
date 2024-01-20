@@ -15,8 +15,8 @@ Welcome to the GithubFyle -GitHub Repositories Viewer! This web application allo
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/github-repositories-viewer.git
-    cd github-repositories-viewer
+   git clone https://github.com/your-username/github-repositories-viewer.git
+   cd github-repositories-viewer
     ```
 
 2. **Open `index.html` in your web browser.**
