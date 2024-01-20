@@ -13,5 +13,5 @@ Welcome to the GitHub Repositories Viewer! This web application allows you to dy
 1. Clone the repository:
 
    ```bash
-   git clone  https://github.com/HarshSriv/githubFyle/.git
+   git clone https://github.com/HarshSriv/githubFyle/.git](https://github.com/HarshSriv/githubFyle.git)https://github.com/HarshSriv/githubFyle.git
    cd github-repositories-viewer
